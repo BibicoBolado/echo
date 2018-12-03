@@ -1,0 +1,115 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Studio< echo > | Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body id="my-body">
+
+    <div class="cont-top">
+        <img class="img-top" src="{% static 'image/topImage.jpg' %}">
+        <div class="navbar navbar-default navbar-fixed-top" id="nav" >
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="{% url 'index:index' %}" class="navbar-brand ">
+                            Studio < echo >
+                    </a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar" style="background-color: lightgray; font-size: 15px;" ></span>
+                            <span class="icon-bar" style="background-color: lightgray; font-size: 15px;"></span>
+                            <span class="icon-bar" style="background-color: lightgray; font-size: 15px;"></span>                        
+                    </button>
+                    
+                    </div>
+                    <div class="navbar-collapse collapse" id="myNavbar">
+                        <ul  class="nav navbar-nav">
+                            <li style><a href="{% url 'index:index' %}">Home</a></li>
+                            <li><a href="#">Portifólio</a></li>
+                            <li><a href="#">Dúvidas Frequentes</a></li>
+                        </ul>
+                        <ul class="nav navbar-right navbar-nav" >
+                            <li>
+                                <a href="{% url 'index:contact' %}">Contato</a>
+                            </li>
+                            <li>
+                                <a href="#">Login</a>
+                            </li>
+                        </ul>
+                </div>		
+            </div>
+            
+        </div><!-- /.navbar Final do cont-top-->
+        <div class="title">
+                <h1 style="font-size:4vw;">Comunicação Digital</h1>
+        </div>
+        <div class="sub-title text-center">
+                <h1 style="font-size:2vw;">Sua empresa merece mais que uma simples página na WEB </h1>
+                <h1 style="font-size:2vw;">Construa sites que façam sentido para seu negócio</h1>
+                <h1 style="font-size:2vw;">Esteja presente nas redes sociais e no google</h1>
+        </div>
+    </div>
+    {% block content %} {% endblock %}
+    <br/>
+    <div class="footer">
+        
+        <div class="container-fluid text-center">
+
+            <div class="row">
+                
+                    
+                        
+                <a href="#"><img src="{% static 'image/google.png' %}" class="img-footer"></a>
+                        
+                        
+                <a href="#"><img src="{% static 'image/inst.png' %}" class="img-footer"></a>
+                        
+                        
+                <a href="#"><img src="{% static 'image/pint.png' %}" class="img-footer"></a>
+                        
+                        
+                <a href="#"><img src="{% static 'image/fb2.png' %}" class="img-footer"></a>
+                        
+                    
+                    
+            </div>
+            <div class="row">
+                <h5>Somos uma empresa de Marketing Digital e Desenvolvimento de Soluções WEB (2018)</h5>
+            </div>
+            <div class="row">
+                <h4>Não encontrou oque estava buscando?</h4>
+            </div>
+            <div class="row">
+                <a href="https://api.whatsapp.com/send?phone=5521983773159" target="_blank">
+                    <h4>Chama no ZAP!</h4>
+                    <h5>(21) 96521-6071</h5>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+        <script>
+                $(document).ready(function(){
+                    if($('.img-top').height()>=500){
+                        $('#nav').affix({
+                        offset: {
+                            top: $('.img-top').height() -50
+                        }
+                    });
+                    }else{
+
+                    }
+
+                });
+        </script>
+</body>
+</html>

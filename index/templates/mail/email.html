@@ -1,0 +1,50 @@
+{%load staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Studio< echo > | Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body id="my-body">
+    <div class="container">
+
+        <h3>Olá {{ name }}</h3>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-6">
+                <h4>Estamos muito felizes por receber sua mensagem!</h4>
+                <br/>
+                Em breve estaremos entrando em contato por telefone e por e-mail para continuarmos desenvolvendo o seu projeto!
+            </div>
+            <div class="col-sm-6">
+                <h4>Próximos Passos:</h4>
+                <ol>
+                    <li>Contato para Entendermos oque você Precisa</li>
+                    <li>Pagamento do pacote acordado</li>
+                    <li>Fase de Desenvolvimento</li>
+                    <li>Queremos seu Feedback Constantemente</li>
+                    <li>Fase de Testes. Nessa etapa quanto mais você se envolver melhor!</li>
+                    <li>Entrega do seu Projeto</li>
+                    <li>Melhorias Continuas</li>
+
+                </ol>
+            </div>
+        </div>
+        <h4>Importante</h4>
+        <p>Sinta-se a vontade para falar conosco a qualquer momento:</p>
+        <hr/>
+        <strong><p>(21)96521-6071</p></strong>
+        <strong><p>rodrigao1993@gmail.com</p></strong>
+    </div>
+
+   
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+</body>
+</html>
