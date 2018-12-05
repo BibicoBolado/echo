@@ -13,7 +13,7 @@ class Contact(forms.Form):
     email   =  forms.EmailField(label='Seu melhor e-mail',
                widget=forms.TextInput(attrs={'class' : 'form-control','placeholder': 'Digite o Email Aqui'})
     )
-    phone   =  forms.CharField(label='Quer Receber uma Ligação?',max_length=150,
+    phone   =  forms.CharField(label='Insira o número e Receba uma ligação nossa',max_length=150,
                widget=forms.TextInput(attrs={'class' : 'form-control','placeholder': '(xx)-91234-5678'})
     )
     message =  forms.CharField(label='Explique aqui sua ideia:',

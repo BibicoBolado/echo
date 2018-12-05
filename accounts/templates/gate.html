@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{%load staticfiles%}
+
+{% block content %}
+
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-{{message.tags}}">
+        {{message}}
+    </div>
+{% endfor %}
+{% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Bom te ver aqui!</h2>
+                <h3>Em nossa plataforma você pode:</h3>
+                <ul>
+                    <li>Acompanhar Seu Pedido</li>
+                    <li>Manter um Contato Simples e Organizado</li>
+                    <li>Verificar o Andamento de seu Projeto</li>
+                    <li>Está esperando oque?</li>
+                </ul>
+            </div>
+            <div class="col-sm-6">
+                <h2>Login</h2>
+                <form action="{% url 'accounts:login' %}" method="post">
+                    {% csrf_token %}
+
+                    {% for field in form %}
+                        {{field.label_tag}}
+                        <br/>
+                        {{field}}
+                    {% endfor %}
+                    <hr/>
+                    <p><a href="{% url 'accounts:password_reset' %}">Esqueceu a Senha ou o Login?</a></p>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    
+                </form>
+            </div>
+        </div>
+        <div class="row text-center">
+                <br />
+                <h3>Ainda não é Cadastrado?</h3>
+                <h4><a href="{% url 'accounts:regView' %}">Clique Aqui</a></h4>
+            </div>
+    </div>
+
+{% endblock %}

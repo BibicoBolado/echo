@@ -39,9 +39,15 @@
                             <li>
                                 <a href="{% url 'index:contact' %}">Contato</a>
                             </li>
-                            <li>
-                                <a href="#">Login</a>
-                            </li>
+                            
+                                {% if user.is_authenticated %}
+                                <li><a href="#"><strong>Olá {{user}}</strong></a></li>
+                                <li><a href="{% url 'accounts:leave' %}">Sair</a></li>
+                                {% else %}
+                                <li><a href="{% url 'accounts:gate' %}">Login</a></li>
+                                {% endif %}
+                                
+                           
                         </ul>
                 </div>		
             </div>
