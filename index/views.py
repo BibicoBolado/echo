@@ -7,10 +7,7 @@ from .forms import Contact
 
 def index(request):
     template_name='index.html'
-    context={}
-    context['teste'] = 12
-    context['teste2']= 13
-    return render(request,template_name,context)
+    return render(request,template_name)
     
 def contact(request):
         template_name='contact.html'

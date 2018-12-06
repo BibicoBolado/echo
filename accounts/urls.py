@@ -10,5 +10,6 @@ urlpatterns = [
     path('logout',views.leave,name='leave'),
     path('registrar-usuario/',views.regUser,name='regUser'),
     path('recuperar-senha/',views.password_reset,name='password_reset'),
+    path('form-recuperar-senha/<str:key>',views.password_reset_confirm,name='reset_form'),
 
 ]

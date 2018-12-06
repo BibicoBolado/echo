@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth import login,logout,authenticate, get_user_model
+from django.contrib.auth.forms import UserCreationForm,SetPasswordForm
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -80,15 +81,27 @@ def password_reset(request):
     # e com o form vazio ps form.is_valid() é falso
     if request.method=='POST':
         if form.is_valid():
-            email = form.cleaned_data['email']
-            user = User.objects.get(email=email)
-            key = generate_hash_key(email)
-            reset = PasswordReset(key=key,user=user)
-            reset.save()
+            form.save()
             messages.success(request,'Verifique seu Email')
         else:
             messages.warning(request,form.errors)
     context['form'] =form
+    return render(request,template_name,context)
+
+def password_reset_confirm(request,key):
+    template_name='password_change_form.html'
+    context = {}
+    reset = get_object_or_404(PasswordReset,key=key)
+    form = SetPasswordForm(user=reset.user,data= request.POST or None)
+    print(form)
+    if request.method=='POST':
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Senha alterada com sucesso')
+            return redirect('accounts:gate')
+        else:
+            messages.warning(request,form.errors)
+    context['form']=form
     return render(request,template_name,context)
 
 

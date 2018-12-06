@@ -1,8 +1,10 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Profile
+from .models import Profile,PasswordReset
 
+from .utils import generate_hash_key
+from index.mail import send_mail_user
 
 class RegisterForm(UserCreationForm):
     username    =  forms.CharField(label='Usuário',max_length=150,
@@ -50,4 +52,15 @@ class PasswordResetForm(forms.Form):
         raise forms.ValidationError("Nenhum Usuário Encontrado com Esse E-mail")
     #toda função clean_X retorna o valor que   o 
     #formulário estará pegando no final p salvar
+    def save(self):
+        email = self.cleaned_data['email']
+        user = User.objects.get(email=email)
+        key = generate_hash_key(email)
+        reset = PasswordReset(key=key,user=user)
+        reset.save()
+        template_name='reset_password_mail.html'
+        subject = 'Nova  Senha Studio <echo>'
+        context = {'Usuario':user.username,'reset':reset}
+        print(reset)
+        send_mail_user(subject,template_name,context,[user.email])
         
