@@ -14,6 +14,7 @@
 {% endif %}
 <div class="container">
     <h1>Contato</h1>
+    <hr/>
     <h3> Fale um pouco sobre seu projeto! </h3>
     <form id="formContact" action="{% url 'index:contact' %}" method="post">
         {% csrf_token %}

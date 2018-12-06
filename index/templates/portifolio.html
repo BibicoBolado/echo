@@ -2,7 +2,18 @@
 {%load staticfiles%}
 
 {% block content %}
-
-    <h1>TESTE</h1>
-
+<div class="container">
+    <h1>Portfolio</h1>
+    <hr/>
+    <div class="row">
+        {% for iten in project  %}
+        <div class="col-sm-4 columncatalog" style="padding:0px">
+        <a href="{% url 'index:project' iten.slug %}">
+            <img class="portfolio-image" src="{{iten.imageMin.url}}"  alt="{{iten.name}}">
+            <div class="overlay">{{iten.name}}</div>
+        </a>    
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

@@ -51,7 +51,6 @@ def regView(request):
 def regUser(request):
     if request.method == 'POST':
         form  = RegisterForm(request.POST)
-
         form2 = ProfileForm(request.POST)
         if form.is_valid():  
             user = form.save()

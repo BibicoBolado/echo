@@ -126,6 +126,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#arquivos de MEDIA são arquivos de modelos
+#Media Root é onde os arquivos   vão ficar
+#O upload_to do model     fica concatenado 
+#com o Media_Root
+#URL_MEDIA é a url base para os arquivos de media (upload usuario)
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'
 
 #Configurações de email para contato
 EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'

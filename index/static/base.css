@@ -1,3 +1,8 @@
+#my-body{
+
+  font-family: 'Ubuntu', sans-serif;
+
+}
 /*  NECESSÁRIO PARA OS TEXTOS FICAREM NA IMAGEM
     É O CONTAINER ONDE A IMAGEM E OS TEXTOS ESTÃO
 */
@@ -32,6 +37,7 @@
 
 /* Barra de navegação para celular na imagem*/
 .affix-top .navbar-collapse {
+
   border-color:transparent;
   box-shadow:initial;
      
@@ -39,6 +45,7 @@
 
 /* Itens nav quando a página está dentro da imagem */
 .affix-top .nav>li>a {
+
   color: white;
   font-size: 16px;
 }
@@ -47,6 +54,7 @@
 .affix-top .navbar-brand {
   color: white;
   font-size: 28px;
+  
 }
 
 
@@ -64,6 +72,8 @@
   font-weight: normal;
   line-height: 52px;
   text-shadow: 0px 0px 0px transparent;
+  font-family: 'Ubuntu', sans-serif;
+
   
 }
 
@@ -83,6 +93,8 @@
   font-weight: normal;
   line-height: 52px;
   text-shadow: 0px 0px 0px transparent;
+  font-family: 'Ubuntu', sans-serif;
+
 }
 
 /* footer da página */
@@ -131,4 +143,46 @@
   border-bottom: solid;
   border-width: 1px;
   border-color: #D4D4D4;
+}
+
+/* Imagem do portfolio */
+.portfolio-image{
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+}
+
+/* Overlay itens portfolio */
+.columncatalog:hover .overlay {
+  opacity: 1;
+  
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-top:0px;
+}
+/* FIM Overlay itens portfolio */
+
+/* Imagens dos projetos */
+.img-project{
+  width: 100%;
+  border-bottom: solid;
+  border-width: 2px;
+  color:white;
 }

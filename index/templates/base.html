@@ -4,6 +4,7 @@
 <head>
     <title>Studio< echo > | Home</title>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -32,14 +33,12 @@
                     <div class="navbar-collapse collapse" id="myNavbar">
                         <ul  class="nav navbar-nav">
                             <li style><a href="{% url 'index:index' %}">Home</a></li>
-                            <li><a href="#">Portifólio</a></li>
-                            <li><a href="#">Dúvidas Frequentes</a></li>
-                        </ul>
-                        <ul class="nav navbar-right navbar-nav" >
+                            <li><a href="{% url 'index:portifolio' %}">Portfolio</a></li>
                             <li>
                                 <a href="{% url 'index:contact' %}">Contato</a>
                             </li>
-                            
+                        </ul>
+                        <ul class="nav navbar-right navbar-nav" >
                                 {% if user.is_authenticated %}
                                 <li><a href="#"><strong>Olá {{user}}</strong></a></li>
                                 <li><a href="{% url 'accounts:leave' %}">Sair</a></li>
